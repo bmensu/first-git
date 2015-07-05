@@ -10,7 +10,14 @@ public class TestBankAccount {
   public void testDebitWithSufficientFunds() {
     BankAccount account = new BankAccount (100);
     double amount = account.debit(60);
-    Assert.assertEquals(40.0, amount);
+    Assert.assertEquals(60.0, amount);
+  }
+
+  @Test
+  public void testDebitWithInsufficientFunds() (
+    BankAccount account = new BankAccount (100);
+    double amount = account.debit(200);
+    Assert.assertEquals(100.0, amount);
   }
 
 }
